@@ -16,13 +16,15 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    dmidecode
+    set -x
+    sudo dmidecode
     free -m
     df -h
     cat /etc/os-release
   displayName: 'Execute dmidecode and a some other diagnostic commands'
   
 - script: |
+    set -x
     npm install
     npm run build
   displayName: 'npm install and build'
